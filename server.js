@@ -8,7 +8,8 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // Kết nối đến MongoDB
-mongoose.connect('mongodb://localhost:27017/remoteWorkVN', { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/remoteWorkVN';
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Kết nối đến MongoDB thành công'))
   .catch(err => console.error('Lỗi kết nối tới MongoDB:', err));
 
