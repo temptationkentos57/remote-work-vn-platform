@@ -10,8 +10,8 @@ const io = new Server(server);
 // Connect to MongoDB
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/remoteWorkVN';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Successfully connected to MongoDB: ' + mongoURI))
-  .catch(err => console.error('Connection error to MongoDB:', err));
+  .then(() => console.log('Successfully connected to MongoDB at: ' + mongoURI))
+  .catch(err => console.error('MongoDB connection error: ', err));
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Remote Work Platform in Vietnam!');
