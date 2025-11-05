@@ -14,7 +14,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error('Lỗi kết nối tới MongoDB:', err));
 
 app.get('/', (req, res) => {
-  res.send('Chào mừng đến với Nền Tảng Làm Việc Từ Xa Việt Nam!');
+  res.send('Welcome to the Remote Work Platform in Vietnam!');
 });
 
 io.on('connection', (socket) => {
